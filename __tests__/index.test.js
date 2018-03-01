@@ -62,4 +62,12 @@ describe("index route", () => {
         expect(response.text).toLookLike({ result: "success", code: 200, data: { title: "CaptainU" } });
       });
   });
+
+  it("should render correctly", () => {
+    return request(app)
+      .get("/")
+      .expect(response => {
+        expect(response.text).toMatchSnapshot();
+      });
+  });
 });
