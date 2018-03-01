@@ -10,3 +10,24 @@ Simple Node/Express app to demonstrate calling an asyncronous function (like a h
 4. Uses Eslint
 
 Let me know if you dig it :-)
+
+## Quick start
+
+This project was built with Node.js v9.3 and Yarn. If you have those installed, you should be able to run the following to get started:
+
+```
+git clone https://github.com/adamwysocki/asyncExpress.git
+cd asyncExpress
+yarn
+```
+
+## Available scripts
+
+Run `yarn <script>`
+
+* `build` - run bable and build the final app
+* `coverage` - run test coverage
+* `lint` - run linter
+* `start` - run the server
+* `test` - run the tests
+* `typecheck` - run flow

@@ -4,7 +4,6 @@ import morgan from "morgan";
 import axios from "axios";
 import chalk from "chalk";
 import cheerio from "cheerio";
-import pkg from "../package";
 
 // setup some consts
 const PORT = process.env.PORT || 8080;
@@ -48,8 +47,6 @@ app.get("/", (request, response) => {
 });
 
 // fire up the server
-app.server = app.listen(PORT, () =>
-  console.log(chalk.blue(`${pkg.name} version ${pkg.version} running on port ${PORT}`))
-);
+app.server = app.listen(PORT, () => console.log(chalk.blue(`asyncExpress running on port ${PORT}`)));
 
 module.exports = app;

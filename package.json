@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "description": "Simple example of async/await middleware in express",
   "main": "index.js",
+  "engines": {
+    "node": ">=9.3"
+  },
   "scripts": {
-    "test": "jest",
     "build": "rimraf dist/ && ./node_modules/.bin/babel ./src --out-dir dist/ --copy-files",
-    "start": "npm run build && node dist/index.js"
+    "coverage": "jest --coverage",
+    "lint": "eslint src",
+    "start": "npm run build && node dist/index.js",
+    "test": "jest",
+    "typecheck": "flow"
   },
   "author": {
     "name": "Adam Wysocki",
@@ -23,7 +29,13 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "~8.0.2",
     "babel-preset-es2015": "^6.24.1",
+    "eslint": "~4.10.0",
+    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-plugin-flowtype": "~2.39.1",
+    "eslint-plugin-import": "~2.8.0",
+    "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.66.0",
     "jest": "^22.4.2",
     "lodash": "^4.17.5",
@@ -31,6 +43,9 @@
     "supertest": "^3.0.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleFileExtensions": ["js"],
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": ["src/*.js"]
   }
 }
