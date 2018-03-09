@@ -43,7 +43,7 @@ describe("index route", () => {
       .expect(200)
       .expect(response => {
         expect(response.text).toMatch(/title/);
-        expect(response.text).toMatch(/CaptainU/);
+        expect(response.text).toMatch(/Google/);
       });
   });
 
@@ -59,7 +59,7 @@ describe("index route", () => {
     return request(app)
       .get("/")
       .expect(response => {
-        expect(response.text).toLookLike({ result: "success", code: 200, data: { title: "CaptainU" } });
+        expect(response.text).toLookLike({ result: "success", code: 200, data: { title: "Google" } });
       });
   });
 

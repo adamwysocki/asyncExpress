@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index route should render correctly 1`] = `"{\\"result\\":\\"success\\",\\"code\\":200,\\"data\\":{\\"title\\":\\"CaptainU\\"}}"`;
+exports[`index route should render correctly 1`] = `"{\\"result\\":\\"success\\",\\"code\\":200,\\"data\\":{\\"title\\":\\"Google\\"}}"`;

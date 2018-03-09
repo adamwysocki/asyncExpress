@@ -1,3 +1,4 @@
+// @flow
 import express from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
@@ -7,7 +8,7 @@ import cheerio from "cheerio";
 
 // setup some consts
 const PORT = process.env.PORT || 8080;
-const WEB_PAGE = `https://www.captainu.com`;
+const WEB_PAGE = `https://www.google.com`;
 
 // create the app
 var app = express();
@@ -23,7 +24,7 @@ app.use(morgan("dev"));
     on the request. This could be a db call, or other
     async API as well 
 */
-app.use(async (request, response, next) => {
+app.use(async (request: any, response: any, next: any) => {
   const result = await axios.get(WEB_PAGE);
   const $ = cheerio.load(result.data);
 
@@ -42,7 +43,7 @@ app.use(async (request, response, next) => {
 });
 
 // use the info in a route
-app.get("/", (request, response) => {
+app.get("/", (request: any, response: any) => {
   response.status(200).json({ result: "success", code: 200, data: { title: request.pageTitle } });
 });
 
